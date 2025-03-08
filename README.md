@@ -17,7 +17,17 @@ Customer segmentation was conducted to group customers based on shared character
 
 ### **3. Credit Risk Analysis**  
 A risk assessment was conducted to identify high-risk customers:  
-- **Debt-to-Income Ratio Analysis:** Identified the top five customers with the highest total debt compared to their yearly income to assess potential financial risks.  
+- **Debt-to-Income Ratio Analysis:** Identified the top five customers with the highest total debt compared to their yearly income to assess potential financial risks.
+
+  ## SQL Queries Used  
+  Extracting in-demand skills for top data roles:  
+  ```sql
+  SELECT skill, COUNT(*) AS demand
+  FROM job_listings
+  GROUP BY skill
+  ORDER BY demand DESC
+  LIMIT 5;
+
 
 ## **Insights & Recommendations**  
 - Customers with higher income and good credit scores are ideal targets for premium card offers and loyalty programs.  
