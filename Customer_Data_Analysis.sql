@@ -104,10 +104,10 @@ WITH cred_score AS (
 		WHEN credit_score BETWEEN 800 AND 850 THEN 'Excellent Credit'
 	END AS cred_score_category
 FROM users_data)
-	SELECT cred_score_category, COUNT(*)
+	SELECT cred_score_category, COUNT(*) AS user_count
 	FROM cred_score
 	GROUP BY cred_score_category
-	ORDER BY COUNT(*) DESC;
+	ORDER BY user_count DESC;
 
 SELECT ROUND(CORR(yearly_income, credit_score)::NUMERIC, 2) AS corr_income_credscore
 FROM users_data;  --No correlation
